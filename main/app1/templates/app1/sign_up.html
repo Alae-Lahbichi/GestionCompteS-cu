@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="  {% static "CSS/index.css" %} ">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<section class = "container">
+    <div class="form_div">
+        <form action="" method = "POST" class = "form_info">
+            {% csrf_token %}
+            {% block "header_text"  %}
+            <h1>Register Now</h1>
+            {% endblock  %}
+            {% for field in form  %}
+            <div class="box">
+            {{ field.label }}
+            {{ field }}
+            </div>
+            {% endfor %}
+        <button type="submit" id="submit">Submit</button>
+        <div class="erreur">
+         {% for message in messages  %}
+           <p> {{ message }} </p>
+        {% endfor %}
+       </div>
+       {% block "footer_text" %}
+       <div class="login">
+        <h5>Have an account ? <a href=" {% url "app1:login" %}">Sign In</a></h5>
+       </div>
+       {% endblock  %}
+    </form>
+    </div>
+</section>
+<script src=" {% static "JS/index.js" %} "></script>
+</body>
+</html>

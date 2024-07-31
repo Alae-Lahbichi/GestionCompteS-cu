@@ -13,9 +13,7 @@ def sign_up_page (request) :
     if request.method == "POST" :
         form = userform(request.POST)
         if form.is_valid():
-            username = request.POST["username"]
             form.save()
-            messages.success(request , f"Bienvenue dans notre site M/Ms {username} ")
             return redirect('app1:main')
         else :
             for error in form.errors.values():
@@ -32,7 +30,6 @@ def login_page (request) :
             password = request.POST['password']
             user = authenticate(request , username = username , password = password)
             if user is not None :
-                messages.success(request , 'Login avec succés')
                 return redirect('app1:main')
             else :
                 messages.error(request , "login error")

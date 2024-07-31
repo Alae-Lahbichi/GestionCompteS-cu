@@ -3,22 +3,30 @@ from django.contrib.auth.forms import UserCreationForm , AuthenticationForm
 from django.contrib.auth.models import User
 
 class userform (UserCreationForm) :
-    email = forms.EmailField(widget=forms.EmailInput(attrs={
+    email = forms.EmailField(
+        label='',
+        widget=forms.EmailInput(attrs={
         'placeholder' : "Email",
     }),
     required=False
     )
 
-    username = forms.CharField(widget=forms.TextInput(attrs={
+    username = forms.CharField(
+        label='',
+        widget=forms.TextInput(attrs={
         'placeholder' : "username",
     }))
 
-    password1 = forms.CharField(widget=forms.PasswordInput(attrs={
+    password1 = forms.CharField(
+        label='' , 
+        widget=forms.PasswordInput(attrs={
         'placeholder' : 'password' ,
     }))
 
-    password2 = forms.CharField(widget=forms.PasswordInput(attrs={
-        'placeholder' : 'password confirmation'
+    password2 = forms.CharField(
+        label='' , 
+        widget=forms.PasswordInput(attrs={
+        'placeholder' : 'password confirmation' , 
     }))
 
     class Meta:
@@ -27,10 +35,14 @@ class userform (UserCreationForm) :
 
 
 class userauthentication (AuthenticationForm) :
-    username = forms.CharField(widget=forms.TextInput(attrs={
+    username = forms.CharField(
+        label='',
+        widget=forms.TextInput(attrs={
         'placeholder' : "username"
     }))
 
-    password = forms.CharField(widget=forms.PasswordInput(attrs={
+    password = forms.CharField(
+        label='' ,
+        widget=forms.PasswordInput(attrs={
         'placeholder' : 'password'
     }))

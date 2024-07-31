@@ -50,7 +50,7 @@ section {
     gap: 1.3rem;
 }
 
-.form_info input {
+.form_info  input {
     width: 100%;
     padding: 0.7rem 1rem;
     background-color: rgba(255, 255, 255, 0.589) ;
@@ -59,7 +59,7 @@ section {
 .box {
     width: 100%;
     text-align: start;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     font-weight: 700;
 }
 
@@ -110,7 +110,7 @@ section {
 }
 
 .sign_up a {
-  color: black;
+  color: white;
   text-decoration: none;
   font-size: 1.05rem;
   opacity: 0.5;
@@ -130,3 +130,4 @@ section {
     font-weight: 700;
     font-size: 1rem;
 }
+
